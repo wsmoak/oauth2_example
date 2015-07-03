@@ -1,6 +1,7 @@
-defmodule GitHub do
+defmodule Fitbit do
   @moduledoc """
-  An OAuth2 strategy for GitHub.
+  An OAuth2 strategy for Fitbit.
+  https://wiki.fitbit.com/display/API/OAuth+2.0
   """
   use OAuth2.Strategy
 
@@ -14,9 +15,9 @@ defmodule GitHub do
       client_id: System.get_env("CLIENT_ID"),
       client_secret: System.get_env("CLIENT_SECRET"),
       redirect_uri: System.get_env("REDIRECT_URI"),
-      site: "https://api.github.com",
-      authorize_url: "https://github.com/login/oauth/authorize",
-      token_url: "https://github.com/login/oauth/access_token"
+      site: "https://api.fitbit.com",
+      authorize_url: "https://www.fitbit.com/oauth2/authorize",
+      token_url: "https://api.fitbit.com/oauth2/token"
     ])
   end
 
