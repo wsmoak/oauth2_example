@@ -8,7 +8,7 @@ defmodule OAuth2Example.AuthController do
   based on the chosen strategy.
   """
   def index(conn, _params) do
-    redirect conn, external: GitHub.authorize_url!
+    redirect conn, external: Fitbit.authorize_url!
   end
 
   @doc """
@@ -19,7 +19,7 @@ defmodule OAuth2Example.AuthController do
   """
   def callback(conn, %{"code" => code}) do
     # Exchange an auth code for an access token
-    token = GitHub.get_token!(code: code)
+    token = Fitbit.get_token!(code: code)
 
     # Request the user's data with the access token
     user = OAuth2.AccessToken.get!(token, "/user")

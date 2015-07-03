@@ -52,7 +52,7 @@
 
         <a class="btn btn-primary btn-lg" href="<%= auth_path @conn, :index %>">
           <i class="fa fa-github"></i>
-          Sign in with GitHub
+          Sign in with Fitbit
         </a>
       <% end %>
     </div>

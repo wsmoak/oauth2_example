@@ -8,12 +8,13 @@
 
 To start the application:
 
-1. Register a new application on [GitHub](https://github.com/settings/applications/new)
+1. Register a new application with [Fitbit](https://dev.fitbit.com/apps)
     - Enter http://lvh.me:4000/auth/callback for the Authorization callback URL
-2. Set `CLIENT_ID` and `CLIENT_SECRET` environment variables
+2. Set the `REDIRECT_URI` environment variable to the callback url.
+2. Set the `CLIENT_ID` and `CLIENT_SECRET` environment variables
 3. Install Elixir dependencies with `mix deps.get`
 4. Install NodeJS dependencies with `npm install`
 5. Start Phoenix router with `mix phoenix.server`
 
 Now you can visit `lvh.me:4000` from your browser and click "Sign in with
-GitHub".
+Fitbit".
