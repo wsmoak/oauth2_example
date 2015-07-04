@@ -8,7 +8,7 @@ defmodule OAuth2Example.AuthController do
   based on the chosen strategy.
   """
   def index(conn, _params) do
-    redirect conn, external: Fitbit.authorize_url!
+    redirect conn, external: Fitbit.authorize_url! [{:scope, "sleep settings"}]
   end
 
   @doc """
