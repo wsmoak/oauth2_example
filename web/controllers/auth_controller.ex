@@ -1,3 +1,5 @@
+require Logger
+
 defmodule OAuth2Example.AuthController do
   use OAuth2Example.Web, :controller
 
@@ -8,7 +10,7 @@ defmodule OAuth2Example.AuthController do
   based on the chosen strategy.
   """
   def index(conn, _params) do
-    redirect conn, external: Fitbit.authorize_url! [{:scope, "sleep settings"}]
+    redirect conn, external: Fitbit.authorize_url!(scope: "sleep settings")
   end
 
   @doc """
@@ -19,10 +21,16 @@ defmodule OAuth2Example.AuthController do
   """
   def callback(conn, %{"code" => code}) do
     # Exchange an auth code for an access token
+    Logger.info "******THE CODE IS*****"
+    Logger.info code
     token = Fitbit.get_token!(code: code)
+    Logger.info "******THE TOKEN IS*****"
+    Logger.info token
 
     # Request the user's data with the access token
     user = OAuth2.AccessToken.get!(token, "/user")
+    Logger.info "*****THE USER IS****"
+    Logger.info user
 
     # Store the user in the session under `:current_user` and redirect to /.
     # In most cases, we'd probably just store the user's ID that can be used
