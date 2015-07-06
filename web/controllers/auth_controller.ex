@@ -21,16 +21,13 @@ defmodule OAuth2Example.AuthController do
   """
   def callback(conn, %{"code" => code}) do
     # Exchange an auth code for an access token
-    Logger.info "******THE CODE IS*****"
-    Logger.info code
+    Logger.info "******THE CODE IS: " <> code
     token = Fitbit.get_token!(code: code)
-    Logger.info "******THE TOKEN IS*****"
-    Logger.info inspect(token)
+    Logger.info "******THE TOKEN IS: " <> inspect(token)
 
     # Request the user's data with the access token
     user = OAuth2.AccessToken.get!(token, "/1/user/-/profile.json")
-    Logger.info "*****THE USER IS****"
-    Logger.info inspect(user)
+    Logger.info "*****THE USER IS: " <> inspect(user)
 
     # Store the user in the session under `:current_user` and redirect to /.
     # In most cases, we'd probably just store the user's ID that can be used
