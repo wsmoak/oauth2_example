@@ -28,9 +28,9 @@ defmodule OAuth2Example.AuthController do
     Logger.info inspect(token)
 
     # Request the user's data with the access token
-    user = OAuth2.AccessToken.get!(token, "/user")
+    user = OAuth2.AccessToken.get!(token, "/1/user/-/profile.json")
     Logger.info "*****THE USER IS****"
-    Logger.info user
+    Logger.info inspect(user)
 
     # Store the user in the session under `:current_user` and redirect to /.
     # In most cases, we'd probably just store the user's ID that can be used
