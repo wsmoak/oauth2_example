@@ -38,6 +38,7 @@ defmodule Fitbit do
   def get_token(client, params, headers) do
     client
     |> put_header("Accept", "application/json")
+    |> put_header("Authorization", "Basic " <> Base.encode64( System.get_env("CLIENT_ID") <> ":" <> System.get_env("CLIENT_SECRET")))
     |> AuthCode.get_token(params, headers)
   end
 end
