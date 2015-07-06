@@ -44,7 +44,7 @@
       <iframe src="https://ghbtns.com/github-btn.html?user=scrogson&repo=oauth2_example&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
 
       <%= if @current_user do %>
-        <h2>Welcome, <%= @current_user["name"] %>!</h2>
+        <h2>Welcome, <%= @current_user["user"]["displayName"] %>!</h2>
         <img src="<%= @current_user["avatar_url"] %>" class="img-circle"/>
       <% else %>
         <br>
