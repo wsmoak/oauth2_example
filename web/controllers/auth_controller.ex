@@ -25,7 +25,7 @@ defmodule OAuth2Example.AuthController do
     Logger.info code
     token = Fitbit.get_token!(code: code)
     Logger.info "******THE TOKEN IS*****"
-    Logger.info token
+    Logger.info inspect(token)
 
     # Request the user's data with the access token
     user = OAuth2.AccessToken.get!(token, "/user")
