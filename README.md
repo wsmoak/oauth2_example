@@ -9,7 +9,9 @@
 To start the application:
 
 1. 1. Register a new application with [Fitbit](https://dev.fitbit.com/apps)
+    - Choose 'Client' for OAuth 2.0 Application Type
     - Enter http://lvh.me:4000/auth/callback for the Authorization callback URL
+    - Choose 'Read-Only' for Default Access Type
 2. Set the `REDIRECT_URI` environment variable to the callback URL
 3. Set the `CLIENT_ID` and `CLIENT_SECRET` environment variables
 4. Install Elixir dependencies with `mix deps.get`
@@ -24,3 +26,6 @@ After authorizing the application, you should see the welcome message above.
 To revoke access, clear any browser cookies and visit
 https://www.fitbit.com/user/profile/apps
 
+References
+* https://wiki.fitbit.com/display/API/OAuth+2.0
+* https://community.fitbit.com/t5/Web-API/bd-p/dev
