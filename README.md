@@ -20,3 +20,7 @@ Now you can visit `lvh.me:4000` from your browser and click "Sign in with
 Fitbit".
 
 After authorizing the application, you should see the welcome message above.
+
+To revoke access, clear any browser cookies and visit
+https://www.fitbit.com/user/profile/apps
+
