@@ -20,3 +20,6 @@ Now you can visit `lvh.me:4000` from your browser and click "Sign in with
 GitHub".
 
 After authorizing the application, you should see the welcome message above.
+
+To revoke access, clear any browser cookies and visit
+https://github.com/settings/applications
