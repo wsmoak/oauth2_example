@@ -37,6 +37,7 @@ defmodule OAuth2Example.AuthController do
     conn
     |> put_session(:current_user, user)
     |> put_session(:access_token, token.access_token)
+    |> IO.inspect
     |> redirect(to: "/")
   end
 end
