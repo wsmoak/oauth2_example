@@ -36,7 +36,7 @@ defmodule OAuth2Example.AuthController do
     #
     # If you need to make additional resource requests, you may want to store
     # the access token as well.
-    # Logger.debug "*****CONN IS: " <> inspect(conn)
+    Logger.debug "*****conn is: " <> inspect(conn)
 
     conn
     |> put_session(:current_user, user)
