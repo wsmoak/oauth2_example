@@ -44,5 +44,32 @@ defmodule OAuth2Example.AuthController do
     |> IO.inspect
     |> redirect(to: "/")
   end
+
+  @doc """
+  This action is reached via `/auth/callback` and is the the callback
+  URL that Fitbit will redirect the user back to. If the user has
+  denied the request, there will be an 'error' and 'error_message'
+  in the parameters.
+  """
+  def callback(conn, params = %{ "error" => error }) do
+    Logger.debug "*****matched on error, conn is" <> inspect(conn)
+    conn
+    |> put_session(:error, error)
+    |> put_session(:error_message, params["error_description"])
+    |> redirect(to: "/")
+  end
+
+  @doc """
+  This action is reached via `/auth/callback` and is the the callback
+  URL that Fitbit will redirect the user back to.  If neither 'code'
+  nor 'error' were present in the request, we'll end up here.
+  """
+  def callback(conn, _params) do
+    Logger.debug "***** no code or error, in generic callback."
+    Logger.debug "conn is: " <> inspect(conn)
+
+    conn
+    |> redirect(to: "/")
+  end
 end
 
