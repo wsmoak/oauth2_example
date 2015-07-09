@@ -32,16 +32,18 @@
       <span class="logo"></span>
       <h2>OAuth2/Phoenix Example Application!</h2>
       <p class="lead">
-        This is an application to show an example of how to wire up
-        <a href="https://github.com/scrogson/oauth2">OAuth2</a> with
-        <a href="https://github.com/phoenixframework/phoenix">Phoenix</a>.
+        This is an example application to show how to wire up
+        <a href="https://github.com/scrogson">@scrogson</a>'s
+        <a href="https://github.com/scrogson/oauth2">
+        Elixir OAuth 2.0 Client Library</a> with
+        <a href="https://github.com/phoenixframework/phoenix">Phoenix</a> and authenticate with <a href="https://fitbit.com">Fitbit</a>.
       </p>
 
       <br>
       <br>
 
-      <iframe src="https://ghbtns.com/github-btn.html?user=scrogson&repo=oauth2_example&type=star&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-      <iframe src="https://ghbtns.com/github-btn.html?user=scrogson&repo=oauth2_example&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+      <iframe src="https://ghbtns.com/github-btn.html?user=wsmoak&repo=phoenix_oauth2_example&type=star&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+      <iframe src="https://ghbtns.com/github-btn.html?user=wsmoak&repo=phoenix_oauth2_example&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
 
       <%= if @current_user do %>
         <h2>Welcome, <%= @current_user["user"]["displayName"] %>!</h2>
