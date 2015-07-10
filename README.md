@@ -8,7 +8,7 @@
 
 To start the application:
 
-1. 1. Register a new application with [Fitbit](https://dev.fitbit.com/apps)
+1. Register a new application with [Fitbit](https://dev.fitbit.com/apps)
     - Choose 'Client' for OAuth 2.0 Application Type
     - Enter http://lvh.me:4000/auth/callback for the Authorization callback URL
     - Choose 'Read-Only' for Default Access Type
@@ -26,6 +26,21 @@ After authorizing the application, you should see the welcome message above.
 To revoke access, clear any browser cookies and visit
 https://www.fitbit.com/user/profile/apps
 
+To deploy the app to Heroku:
+
+1. Create and configure the heroku app:
+
+```
+$ heroku create
+$ heroku buildpacks:set https://github.com/gjaldon/phoenix-static-buildpack
+$ heroku buildpacks:add --index 1 https://github.com/HashNuke/heroku-buildpack-elixir
+$ heroku addons:create heroku-postgresql
+$ heroku config:set SECRET_KEY_BASE=abc-123-def-456
+```
+
+
+
 References
 * https://wiki.fitbit.com/display/API/OAuth+2.0
 * https://community.fitbit.com/t5/Web-API/bd-p/dev
+* http://maxwellholder.com/blog/build-a-blog-with-phoenix-and-ember
