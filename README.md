@@ -35,12 +35,23 @@ $ heroku create
 $ heroku buildpacks:set https://github.com/gjaldon/phoenix-static-buildpack
 $ heroku buildpacks:add --index 1 https://github.com/HashNuke/heroku-buildpack-elixir
 $ heroku addons:create heroku-postgresql
-$ heroku config:set SECRET_KEY_BASE=abc-123-def-456
+$ heroku config:set SECRET_KEY_BASE=[long random string]
+$ heroku config:set CLIENT_ID=[your fitbit client id]
+$ heroku config:set CLIENT_SECRET=[your fitbit client secret]
+$ heroku config:set REDIRECT_URI=https://your-app-name.herokuapp.com/auth/callback
 ```
+Return to [Fitbit](https://dev.fitbit.com/apps) and edit your application's configuration.  Add the new redirect uri.
 
+Note:  if you cloned this repository from github.com/wsmoak it
+defaults to the fitbit-heroku branch.
+
+You will need to push to heroku like so:
+
+$ git push heroku fitbit-heroku:master
 
 
 References
 * https://wiki.fitbit.com/display/API/OAuth+2.0
 * https://community.fitbit.com/t5/Web-API/bd-p/dev
 * http://maxwellholder.com/blog/build-a-blog-with-phoenix-and-ember
+* See https://devcenter.heroku.com/articles/git#deploying-code
