@@ -6,8 +6,8 @@ defmodule OAuth2Example.PageController do
   plug :action
 
   def index(conn, _params) do
-    Logger.debug "Displaying index page"
-    Logger.debug inspect(conn)
+    #Logger.debug "Displaying index page"
+    #Logger.debug inspect(conn)
     render conn, "index.html"
   end
 end

@@ -36,7 +36,7 @@ defmodule OAuth2Example.AuthController do
     #
     # If you need to make additional resource requests, you may want to store
     # the access token as well.
-    Logger.debug "*****conn is: " <> inspect(conn)
+    #Logger.debug "*****conn is: " <> inspect(conn)
 
     conn
     |> put_session(:current_user, user)
@@ -52,7 +52,7 @@ defmodule OAuth2Example.AuthController do
   in the parameters.
   """
   def callback(conn, params = %{ "error" => error }) do
-    Logger.debug "*****matched on error, conn is" <> inspect(conn)
+    #Logger.debug "*****matched on error, conn is" <> inspect(conn)
     conn
     |> put_session(:error, error)
     |> put_session(:error_message, params["error_description"])
@@ -65,8 +65,8 @@ defmodule OAuth2Example.AuthController do
   nor 'error' were present in the request, we'll end up here.
   """
   def callback(conn, _params) do
-    Logger.debug "***** no code or error, in generic callback."
-    Logger.debug "conn is: " <> inspect(conn)
+    #Logger.debug "***** no code or error, in generic callback."
+    #Logger.debug "conn is: " <> inspect(conn)
 
     conn
     |> redirect(to: "/")
